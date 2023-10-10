@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MetodoPagoController;
+use App\Http\Controllers\SuscripcionController;
+use App\Http\Controllers\SuscriptorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('suscriptors', SuscriptorController::class);
+Route::resource('metodo_pagos', MetodoPagoController::class);
+Route::resource('suscripciones', SuscripcionController::class);
